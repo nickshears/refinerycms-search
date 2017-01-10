@@ -10,7 +10,7 @@ module Refinery
           model = model.safe_constantize
 
           if model.respond_to?(:refinery_search_scope)
-            results << model.refinery_search_scope.with_query(query)
+            results << model.refinery_search_scope(query)
           else
             results << model.with_query(query)
           end
